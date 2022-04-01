@@ -1,8 +1,11 @@
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
 
 function Review() {
+
+    const history = useHistory();
 
     const feedback = useSelector(state => state.feedbackReducer)
 
@@ -17,6 +20,8 @@ function Review() {
         }).catch(error => {
             console.log(error);
         })
+
+        history.push('/completed')
     }
 
 
