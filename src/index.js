@@ -23,19 +23,19 @@ const feedbackReducer = (state = feedback, action) => {
         console.log(action.payload)
         return {
             ...state,
-            feeling: action.payload
+            feeling: Number(action.payload)
         }
     } else if(action.type === 'ADD_UNDERSTANDING') {
         console.log(action.payload)
         return {
             ...state,
-            understanding: action.payload
+            understanding: Number(action.payload)
         }
     } else if(action.type === 'ADD_SUPPORT') {
         console.log(action.payload)
         return {
             ...state,
-            support: action.payload
+            support: Number(action.payload)
         }
     } else if(action.type === 'ADD_COMMENT') {
         console.log(action.payload)
