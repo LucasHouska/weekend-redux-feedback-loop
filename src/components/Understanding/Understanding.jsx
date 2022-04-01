@@ -27,7 +27,7 @@ function Understanding() {
         <>
             <h1>How well are you understanding the content?</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="understanding">Feeling (between 1 and 10):</label>
+                <label htmlFor="understanding">Understanding (between 1 and 10):</label>
                 <input
                     onChange={(event) => { setUnderstanding(event.target.value) }}
                     type="range"
