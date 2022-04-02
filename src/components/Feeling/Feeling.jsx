@@ -25,6 +25,7 @@ function Feeling() {
     return (
         <>
             <h1>How are you feeling today?</h1>
+            <p>{feeling}</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="feeling">Feeling (between 1 and 10):</label>
                 <input

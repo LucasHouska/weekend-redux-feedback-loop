@@ -26,6 +26,7 @@ function Understanding() {
     return (
         <>
             <h1>How well are you understanding the content?</h1>
+            <p>{understanding}</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="understanding">Understanding (between 1 and 10):</label>
                 <input

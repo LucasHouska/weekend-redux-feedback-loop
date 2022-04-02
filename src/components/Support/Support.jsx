@@ -25,6 +25,7 @@ function Support() {
     return (
         <>
             <h1>How well are you being supported?</h1>
+            <p>{support}</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="support">Support (between 1 and 10):</label>
                 <input

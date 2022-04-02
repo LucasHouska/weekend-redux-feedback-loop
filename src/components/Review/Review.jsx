@@ -21,7 +21,7 @@ function Review() {
             console.log(error);
         })
 
-        history.push('/completed')
+        history.push('/completed');
     }
 
 

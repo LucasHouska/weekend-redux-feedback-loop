@@ -24,6 +24,7 @@ function Comments() {
     return (
         <>
             <h1>Any comment you want to leave?</h1>
+            <p>{comment}</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="comment">Comment:</label>
                 <input

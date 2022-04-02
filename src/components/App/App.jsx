@@ -2,6 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {useEffect} from 'react';
+
 import Comments from '../Comments/Comments';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
@@ -10,6 +13,22 @@ import Review from '../Review/Review';
 import CompletedSurvey from '../CompletedSurvey/CompletedSurvey';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  const fetchFeedback = () => {
+    axios.get('/feedback')
+    .then(response => {
+      console.log(response.data);
+      dispatch({type: 'FEEDBACK', payload: response.data});
+    }).catch(error => {
+      console.log(error);
+    })
+  }
+
+  useEffect(() => {
+    fetchFeedback();
+  }, [])
 
   return (
     <Router>
