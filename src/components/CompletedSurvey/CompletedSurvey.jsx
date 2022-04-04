@@ -10,7 +10,7 @@ function CompletedSurvey() {
 
     const handleClick = () => {
 
-        history.push('/feeling');
+        history.push('/');
 
     }
 

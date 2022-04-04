@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 
@@ -6,6 +6,7 @@ import {useHistory} from 'react-router-dom';
 function Review() {
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const feedback = useSelector(state => state.feedbackReducer)
 
@@ -17,11 +18,11 @@ function Review() {
         axios.post('/feedback', feedback)
         .then(response => {
             console.log(response)
+            history.push('/completed')
+            dispatch({type: 'CLEAR'})
         }).catch(error => {
             console.log(error);
         })
-
-        history.push('/completed');
     }
 
 

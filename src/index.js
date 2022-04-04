@@ -43,6 +43,8 @@ const feedbackReducer = (state = feedback, action) => {
             ...state,
             comment: action.payload
         }
+    } else if(action.type === 'CLEAR') {
+        return {}
     }
 
     return state;
