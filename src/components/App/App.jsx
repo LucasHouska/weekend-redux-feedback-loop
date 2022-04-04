@@ -54,7 +54,9 @@ function App() {
         </Route>
 
         <Route path='/review'>
-          <Review />
+          <Review 
+          fetchFeedback={fetchFeedback}
+          />
         </Route>
 
         <Route path='/completed'>

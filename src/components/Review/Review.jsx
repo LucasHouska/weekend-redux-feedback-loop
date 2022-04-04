@@ -3,7 +3,7 @@ import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 
 
-function Review() {
+function Review({fetchFeedback}) {
 
     const history = useHistory();
     const dispatch = useDispatch();
@@ -18,8 +18,9 @@ function Review() {
         axios.post('/feedback', feedback)
         .then(response => {
             console.log(response)
-            history.push('/completed')
             dispatch({type: 'CLEAR'})
+            history.push('/completed')
+            fetchFeedback();
         }).catch(error => {
             console.log(error);
         })
